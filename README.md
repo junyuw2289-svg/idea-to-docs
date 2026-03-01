@@ -15,6 +15,48 @@
 
 ## English
 
+### How to Use (3 steps)
+
+**Step 1 — Install (one command)**
+
+```bash
+mkdir -p ~/.claude/skills/idea-to-docs && curl -fsSL https://raw.githubusercontent.com/junyuw2289-svg/idea-to-docs/main/SKILL.md -o ~/.claude/skills/idea-to-docs/SKILL.md
+```
+
+Restart Claude Code after installing.
+
+**Step 2 — Write your idea into a file**
+
+Create any text/markdown file describing what you want to build. It can be as simple as a few sentences, or as detailed as a full PRD. For example, create `my-idea.md`:
+
+```markdown
+I want to build an AI dictation app:
+- A web frontend for recording audio
+- A backend API that handles transcription
+- An AI agent that polishes the transcript for grammar and style
+- PostgreSQL for storage
+```
+
+That's it. No special format required — just describe your product idea in plain language.
+
+**Step 3 — Run it**
+
+```
+/idea-to-docs my-idea.md
+```
+
+Or specify a custom output directory:
+
+```
+/idea-to-docs my-idea.md --output docs/plans/
+```
+
+Claude will then research approaches, ask you to pick one, decompose the architecture, and generate 20-40+ documentation files — all with approval gates so you stay in control.
+
+Output defaults to `{your-idea-file-parent}/plans/`.
+
+---
+
 ### What It Does
 
 **Turn a product idea into a full technical documentation suite — automatically.**
@@ -189,28 +231,51 @@ Status: 202 Accepted (async), 404 Not Found
 
 ---
 
-### Install
+<a id="中文"></a>
 
-One command:
+## 中文
+
+### 如何使用（3 步搞定）
+
+**第 1 步 — 安装（一行命令）**
 
 ```bash
 mkdir -p ~/.claude/skills/idea-to-docs && curl -fsSL https://raw.githubusercontent.com/junyuw2289-svg/idea-to-docs/main/SKILL.md -o ~/.claude/skills/idea-to-docs/SKILL.md
 ```
 
-Restart Claude Code. Use `/idea-to-docs` as a slash command.
+安装后重启 Claude Code。
 
-### Usage
+**第 2 步 — 把你的想法写进一个文件**
+
+创建任意文本/Markdown 文件，描述你想做什么。几句话就行，也可以写成完整的 PRD。比如创建 `my-idea.md`：
+
+```markdown
+我想做一个 AI 听写应用：
+- Web 前端，用来录音
+- 后端 API，处理转写
+- 一个 AI Agent，帮我润色语法和风格
+- PostgreSQL 做存储
+```
+
+就这样。不需要特殊格式 —— 用自然语言描述你的产品想法即可。
+
+**第 3 步 — 运行**
 
 ```
-/idea-to-docs path/to/my-prd.md
-/idea-to-docs path/to/my-prd.md --output path/to/output-dir
+/idea-to-docs my-idea.md
 ```
+
+或者指定自定义输出目录：
+
+```
+/idea-to-docs my-idea.md --output docs/plans/
+```
+
+Claude 会自动调研技术方案、让你选择、拆解架构、生成 20-40+ 份文档 —— 全程有审批门，你来把控方向。
+
+输出默认在 `{你的想法文件所在目录}/plans/`。
 
 ---
-
-<a id="中文"></a>
-
-## 中文
 
 ### 它做了什么
 
@@ -328,25 +393,6 @@ plans/
 ```
 
 > 这张表就是跨域一致性的「锚点」—— 前端用 camelCase，后端用 snake_case，数据库用 SQL 类型，但映射关系在这里写得清清楚楚。
-
----
-
-### 安装
-
-一行命令：
-
-```bash
-mkdir -p ~/.claude/skills/idea-to-docs && curl -fsSL https://raw.githubusercontent.com/junyuw2289-svg/idea-to-docs/main/SKILL.md -o ~/.claude/skills/idea-to-docs/SKILL.md
-```
-
-重启 Claude Code 后，即可使用 `/idea-to-docs`。
-
-### 使用方式
-
-```
-/idea-to-docs path/to/my-prd.md
-/idea-to-docs path/to/my-prd.md --output path/to/output-dir
-```
 
 ---
 
